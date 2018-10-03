@@ -1,4 +1,4 @@
-import java.util.*;
+/*import java.util.*;
 
 class WeightedQuickUnionPathCompressionUF {
     private int[] parent;  // parent[i] = parent of i
@@ -6,14 +6,14 @@ class WeightedQuickUnionPathCompressionUF {
                            // Note: not necessarily correct if i is not a root node
     private int count;     // number of components
 
-    /**
+    *//**
      * Initializes an empty union–find data structure with {@code n} sites
      * {@code 0} through {@code n-1}. Each site is initially in its own 
      * component.
      *
      * @param  n the number of sites
      * @throws IllegalArgumentException if {@code n < 0}
-     */
+     *//*
     public WeightedQuickUnionPathCompressionUF(int n) {
         count = n;
         parent = new int[n];
@@ -24,23 +24,23 @@ class WeightedQuickUnionPathCompressionUF {
         }
     }
 
-    /**
+    *//**
      * Returns the number of components.
      *
      * @return the number of components (between {@code 1} and {@code n})
-     */
+     *//*
     public int count() {
         return count;
     }
   
 
-    /**
+    *//**
      * Returns the component identifier for the component containing site {@code p}.
      *
      * @param  p the integer representing one site
      * @return the component identifier for the component containing site {@code p}
      * @throws IllegalArgumentException unless {@code 0 <= p < n}
-     */
+     *//*
     public int find(int p) {
         validate(p);
         int root = p;
@@ -54,7 +54,7 @@ class WeightedQuickUnionPathCompressionUF {
         return root;
     }
 
-   /**
+   *//**
      * Returns true if the the two sites are in the same component.
      *
      * @param  p the integer representing one site
@@ -63,7 +63,7 @@ class WeightedQuickUnionPathCompressionUF {
      *         {@code false} otherwise
      * @throws IllegalArgumentException unless
      *         both {@code 0 <= p < n} and {@code 0 <= q < n}
-     */
+     *//*
     public boolean connected(int p, int q) {
         return find(p) == find(q);
     }
@@ -76,7 +76,7 @@ class WeightedQuickUnionPathCompressionUF {
         }
     }  
 
-    /**
+    *//**
      * Merges the component containing site {@code p} with the 
      * the component containing site {@code q}.
      *
@@ -84,7 +84,7 @@ class WeightedQuickUnionPathCompressionUF {
      * @param  q the integer representing the other site
      * @throws IllegalArgumentException unless
      *         both {@code 0 <= p < n} and {@code 0 <= q < n}
-     */
+     *//*
     public void union(int p, int q) {
         int rootP = find(p);
         int rootQ = find(q);
@@ -102,14 +102,14 @@ class WeightedQuickUnionPathCompressionUF {
         count--;
     }
 
-    /**
+    *//**
      * Reads in a sequence of pairs of integers (between 0 and n-1) from standard input, 
      * where each integer represents some site;
      * if the sites are in different components, merge the two components
      * and print the pair to standard output.
      *
      * @param args the command-line arguments
-     */
+     *//*
   
 } 
 class Percolation {
@@ -120,12 +120,12 @@ class Percolation {
 		int bottomVS;
 		private int topVS;
 
-		/**
+		*//**
 		 *
 		 * Creates N-by-N grid, with all sites blocked.
 		 * @param number = size
 		 *
-		 */
+		 *//*
 		public Percolation(int number) {
 			if (number <= 0) {
 	            throw new java.lang.IllegalArgumentException(
@@ -140,12 +140,12 @@ class Percolation {
 
 		}
 
-		/**
+		*//**
 		 *
 		 * Checks that the indexes are not out of bounds.
 		 * @param i = row
 		 * @param j = column
-		 */
+		 *//*
 		private void checkIndex(int i, int j) {
 
 			if (i < 1 || i > rowSize) {
@@ -158,13 +158,13 @@ class Percolation {
 	        }
 		}
 
-		/**
+		*//**
 		 *
 		 * Private method to change from 2D to 1D.
 		 * @param i = row
 		 * @param j = column
 		 * @return newIndex
-		 */
+		 *//*
 		private int changeDimension(int i, int  j) {
 			// 2D coordinates to right index on 1D array.
 			// ( row -1 x column ) + row -1
@@ -172,13 +172,13 @@ class Percolation {
 			return newIndex;
 		}
 
-		/**
+		*//**
 		 *
 		 * open site (row i, column j) if it is not already.
 		 * @param i = row
 		 * @param j = column
 		 *
-		 */
+		 *//*
 		public void open(int i, int j) {
 			checkIndex(i, j);
 			int index = changeDimension(i, j);
@@ -211,14 +211,14 @@ class Percolation {
 
 		}
 
-		/**
+		*//**
 		 *
 		 * Find all valid adjacent open sites.
 		 * @param i = row
 		 * @param j = column
 		 * @param k = direction (up, down, left, right)
 		 * @return adjacent
-		 */
+		 *//*
 		private int getAdjacentIndex(int i, int j, int k) {
 
 			int row = 0, column = 0, adjacent = -1;
@@ -250,14 +250,14 @@ class Percolation {
 			return adjacent;
 		}
 
-		/**
+		*//**
 		 *
 		 *is site (row i, column j) open?
 		 * @param i = row
 		 * @param j = column
 		 * @return isItOpen
 		 *
-		 */
+		 *//*
 		public boolean isOpen(int i, int j) {
 			checkIndex(i, j);
 			boolean isItOpen = grid[changeDimension(i, j)];
@@ -265,12 +265,12 @@ class Percolation {
 
 		}
 
-		/**
+		*//**
 		 * Is the site (row i, column j) full?
 		 * @param i = row
 		 * @param j = column
 		 * @return isItFull
-		 */
+		 *//*
 		public boolean isFull(int i, int j) {
 			checkIndex(i, j);
 			boolean isItFull = unionFind.connected(
@@ -279,10 +279,10 @@ class Percolation {
 
 		}
 
-		/**
+		*//**
 		 * Does the system percolate?
 		 * @return doesIt
-		 */
+		 *//*
 		public boolean percolates() {
 			boolean doesIt = unionFind.connected(topVS, bottomVS);
 			return doesIt;
@@ -300,7 +300,10 @@ public class Solution {
 		Scanner sc=new Scanner(System.in);
 		int size=sc.nextInt();
 		Percolation p = new Percolation(size);
-		/*System.out.println("Bottom virtual site position "
+		
+		String str=sc.nextLine();
+		
+		System.out.println("Bottom virtual site position "
 				+ p.bottomVS);
 		System.out.println("Does it percolates? " + p.percolates());
 		System.out.println("Grid lenght " + p.grid.length);
@@ -312,11 +315,46 @@ public class Solution {
 		 p.open(2, 4);
 		 System.out.println(p.unionFind.connected(16, 8));
 		 p.open(4, 4);
-		 System.out.println(p.unionFind.find(3));*/
+		 System.out.println(p.unionFind.find(3));
         System.out.println("Does it percolates? " + p.percolates());
 
 	}
 
 }
 
-// You can implement the above API to solve the problem
+// You can implement the above API to solve the problem*/
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Solution {
+	
+	  public static void main(String[] args) throws FileNotFoundException {
+		 // File file = new File("/msit2018-20/src/input000.txt");
+		  Scanner sc=new Scanner(System.in);
+	     WeightedQuickUnionPathCompressionUF unionFind;
+	  int h=sc.nextInt();
+	  System.out.println("h"+h);
+	     Percolation p = new Percolation(h);
+		/*System.out.println("Bottom virtual site position "
+				+ p.bottomVS);
+		System.out.println("Does it percolates? " + p.percolates());
+		System.out.println("Grid lenght " + p.grid.length);
+	//	int m=sc.nextInt();*/
+		while(sc.hasNext())
+		{
+			int p1=sc.nextInt();
+			int q=sc.nextInt();
+			// System.out.println("p1"+p1+"---q"+q);
+			p.open(p1, q);
+			
+			
+		}
+		
+        System.out.println(p.percolates());
+
+	         
+	        }
+	        
+	    }
