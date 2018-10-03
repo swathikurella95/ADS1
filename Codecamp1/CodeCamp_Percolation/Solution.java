@@ -335,7 +335,7 @@ public class Solution {
 		  Scanner sc=new Scanner(System.in);
 	     WeightedQuickUnionPathCompressionUF unionFind;
 	  int h=sc.nextInt();
-	  System.out.println("h"+h);
+	 // System.out.println("h"+h);
 	     Percolation p = new Percolation(h);
 		/*System.out.println("Bottom virtual site position "
 				+ p.bottomVS);
